@@ -1,0 +1,53 @@
+.global-div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.left-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 20%;
+  border-right: black solid;
+  background: grey;
+}
+
+.right-section {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 20%;
+  border-left: black solid;
+  background: grey;
+}
+
+.mid-section {
+  position: absolute;
+  height: 100%;
+  left: 30%;
+  width: 40%;
+
+  background-color: grey;
+}
+
+.mid-header-tweet {
+  height: 20%;
+  border-bottom: solid black;
+  background-color: grey;
+}
+
+.mid-nav-container {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.mid-section-newsFeed {
+    box-sizing: border-box;
+    border: solid black;
+    height: 280px;
+    margin-bottom: 2px;
+    padding: 2px;
+}
