@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Tweet.scss";
 
-const Tweet = ({ username, handle, date, content, hashtag, link }) => {
+const Tweet = () => {
   const [data, setData] = useState([]);
   const [picData, setPicData] = useState([]);
   useEffect(() => {
@@ -31,11 +31,10 @@ const Tweet = ({ username, handle, date, content, hashtag, link }) => {
                 <h1> {user.title} </h1>
                 <div>user?id={user.id} </div>
                 <div>
-                  {" "}
                   <img
                     src={picData[user.id].thumbnailUrl}
                     alt=''
-                  />{" "}
+                  />
                 </div>
               </div>
 
