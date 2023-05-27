@@ -3,11 +3,17 @@ import "./Tweet.scss";
 
 const Tweet = ({ username, handle, date, content, hashtag, link }) => {
   const [data, setData] = useState([]);
+  const [picData, setPicData] = useState([]);
   useEffect(() => {
-    //API
-    fetch("https://jsonplaceholder.typicode.com/todos/")
+    fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((json) => setData(json));
+  }, []);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/photos")
+      .then((response) => response.json())
+      .then((json) => setPicData(json));
   }, []);
 
   return (
@@ -16,9 +22,24 @@ const Tweet = ({ username, handle, date, content, hashtag, link }) => {
       <aside className='mid-section'>
         <header className='mid-header-tweet'>What is happening?!</header>
         <nav className='mid-nav-container'>
-          {data.map((item) => (
-            <div key={item.id} className='mid-section-newsFeed'>
-              <div>{item.title}</div>
+          {data.map((user) => (
+            <div
+              key={user.id}
+              className='mid-section-newsFeed'
+            >
+              <div>
+                <h1> {user.title} </h1>
+                <div>user?id={user.id} </div>
+                <div>
+                  {" "}
+                  <img
+                    src={picData[user.id].thumbnailUrl}
+                    alt=''
+                  />{" "}
+                </div>
+              </div>
+
+              <p>{user.body}</p>
             </div>
           ))}
         </nav>
